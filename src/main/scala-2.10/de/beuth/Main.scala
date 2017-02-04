@@ -11,17 +11,14 @@ object Main extends App {
       // Parameter auslesen
       val trainingDataPath = args.apply(0)
       val testDataPath = args.apply(1)
-      val sensorType = args.apply(2)
 
       // Überprüfung der Gültigkeit aller Argumente
-      if (ArgumentInspector.inspectArguments(trainingDataPath, testDataPath, sensorType)) {
+      if (ArgumentInspector.inspectArguments(trainingDataPath, testDataPath)) {
         println("Alle Parameter sind korrekt, Spark-Machine-Learning-Programm wird gestartet ...")
 
         // Sparkprogramm starten
-        SingleSensorSVM.startSupportVectorMachine(trainingDataPath, testDataPath, sensorType)
+        SingleSensorSVM.startSupportVectorMachine(trainingDataPath, testDataPath)
       }
-
-
     } catch {
       case e: ArrayIndexOutOfBoundsException =>
         System.err.println("No arguments found.")

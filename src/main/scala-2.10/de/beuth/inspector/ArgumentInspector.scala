@@ -11,10 +11,9 @@ object ArgumentInspector {
   val errorMessage: String = "Please use following options after spark-submit JAR " +
                              "[path to CSV-Files] [Sensortype] [path to target] [path to GPS-Data]"
 
-  def inspectArguments(trainingDataPath: String, testDataPath: String, sensorType: String): Boolean = {
+  def inspectArguments(trainingDataPath: String, testDataPath: String): Boolean = {
     inspectURL(trainingDataPath) &&
-    inspectURL(testDataPath) &&
-    inspectSensorType(sensorType)
+    inspectURL(testDataPath)
   }
 
   private def inspectSensorId(sensorId: Int): Boolean = {
