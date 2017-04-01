@@ -9,7 +9,7 @@ import java.nio.file.{Files, Paths}
 object ArgumentInspector {
 
   val errorMessage: String = "Please use following options after spark-submit JAR " +
-                             "[path to CSV-Files] [Sensortype] [path to target] [path to GPS-Data]"
+                             "[path to training data] [path to test data]"
 
   def inspectArguments(trainingDataPath: String, testDataPath: String): Boolean = {
     inspectURL(trainingDataPath) &&
